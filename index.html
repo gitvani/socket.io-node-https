@@ -1,0 +1,9 @@
+<script src="/socket.io/socket.io.js"></script>
+<h1>It works</h1>
+<script>
+  var socket = io.connect('https://localhost:3000');
+  socket.on('news', function (data) {
+    console.log(data);
+    socket.emit('my other event', { my: 'data' });
+  });
+</script>
